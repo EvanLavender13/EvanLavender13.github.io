@@ -1,23 +1,26 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8cfa8785-8df8-4aad-ad35-8f1c790b8baf/deploy-status)](https://app.netlify.com/sites/digital-garden-jekyll-template/deploys)
+# Personal GitHub Pages
 
-# Digital garden Jekyll template
+A minimal, clean personal page featuring a WebGPU animated gradient demo.
 
-Use this template repository to get started with your own digital garden.
+## Features
 
-**I wrote a tutorial explaining how to set it up: [Setting up your own digital garden with Jekyll](https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll)**
+- Simple, modern design
+- WebGPU-powered animated gradient background
+- Fully responsive
+- Zero dependencies
 
-Preview the template here: https://digital-garden-jekyll-template.netlify.app/
+## Browser Support
 
-- Based on Jekyll, a static website generator
-- Supports Roam-style double bracket link syntax to other notes
-- Creates backlinks to other notes automatically
-- Features link previews on hover
-- Includes graph visualization of the notes and their links
-- Features a simple and responsive design
-- Supports Markdown or HTML notes
+WebGPU requires a modern browser:
+- Chrome 113+
+- Edge 113+
+- Firefox 121+
+- Safari 18+
 
-<img width="1522" alt="Screen Shot 2020-05-19 at 23 05 46" src="https://user-images.githubusercontent.com/8457808/82400515-7d026d80-9a25-11ea-83f1-3b9cb8347e07.png">
+## Local Development
+
+Simply open `index.html` in a WebGPU-supported browser.
 
 ## License
 
-Source code is available under the [MIT license](LICENSE.md).
+MIT License - see LICENSE file for details.
