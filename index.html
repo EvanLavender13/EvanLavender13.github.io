@@ -270,7 +270,7 @@
                 alphaMode: 'opaque',
             });
 
-            // Shared shader code
+            // Shared shader code (structs and utility functions only)
             const shaderCommon = `
                 struct Parameters {
                     frameBufferWidth: f32,
@@ -291,13 +291,6 @@
                     g: f32,
                     b: f32,
                 }
-
-                @group(0) @binding(0) var agentMap: texture_storage_2d<rgba8unorm, read>;
-                @group(0) @binding(1) var agentMapOut: texture_storage_2d<rgba8unorm, write>;
-                @group(0) @binding(2) var trailMap: texture_storage_2d<rgba8unorm, read>;
-                @group(0) @binding(3) var trailMapOut: texture_storage_2d<rgba8unorm, write>;
-                @group(0) @binding(4) var<storage, read> params: Parameters;
-                @group(0) @binding(5) var<storage, read_write> agents: array<Agent>;
 
                 fn hash(state: u32) -> f32 {
                     var s = state;
@@ -328,6 +321,13 @@
 
             // Stage 0: Agent update
             const computeShaderStage0 = shaderCommon + `
+                @group(0) @binding(0) var agentMap: texture_storage_2d<rgba8unorm, read>;
+                @group(0) @binding(1) var agentMapOut: texture_storage_2d<rgba8unorm, write>;
+                @group(0) @binding(2) var trailMap: texture_storage_2d<rgba8unorm, read>;
+                @group(0) @binding(3) var trailMapOut: texture_storage_2d<rgba8unorm, write>;
+                @group(0) @binding(4) var<storage, read> params: Parameters;
+                @group(0) @binding(5) var<storage, read_write> agents: array<Agent>;
+
                 @compute @workgroup_size(${WORKGROUP_SIZE}, 1, 1)
                 fn main(@builtin(global_invocation_id) global_id: vec3u) {
                     let gid = global_id.x;
@@ -416,6 +416,11 @@
 
             // Stage 1: Diffusion and decay
             const computeShaderStage1 = shaderCommon + `
+                @group(0) @binding(1) var agentMapOut: texture_storage_2d<rgba8unorm, write>;
+                @group(0) @binding(2) var trailMap: texture_storage_2d<rgba8unorm, read>;
+                @group(0) @binding(3) var trailMapOut: texture_storage_2d<rgba8unorm, write>;
+                @group(0) @binding(4) var<storage, read> params: Parameters;
+
                 @compute @workgroup_size(${WORKGROUP_SIZE}, 1, 1)
                 fn main(@builtin(global_invocation_id) global_id: vec3u) {
                     let gid = global_id.x;
@@ -621,12 +626,10 @@
                 const bindGroup1 = device.createBindGroup({
                     layout: computePipeline1.getBindGroupLayout(0),
                     entries: [
-                        { binding: 0, resource: agentMap.createView() },
                         { binding: 1, resource: agentMapOut.createView() },
                         { binding: 2, resource: trailMap.createView() },
                         { binding: 3, resource: trailMapOut.createView() },
                         { binding: 4, resource: { buffer: paramsBuffer } },
-                        { binding: 5, resource: { buffer: agentBuffer } },
                     ],
                 });
 
