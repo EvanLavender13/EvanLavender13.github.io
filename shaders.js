@@ -131,12 +131,12 @@ fn main(@builtin(global_invocation_id) global_id: vec3u) {
     let new_pixel = vec2i(i32(new_position.x), i32(new_position.y));
 
     let agentMapNewV = textureLoad(agentMap, new_pixel);
-    let trailMapNewV = textureLoad(trailMap, new_pixel);
+    let trailMapV = textureLoad(trailMap, pixel);  // Read from OLD position
 
     let depositAmount = params.depositAmount;
     let full_color = vec4f(color.rgb, 1.0);
     let new_color = full_color * depositAmount;
-    let new_value = trailMapNewV + new_color;
+    let new_value = trailMapV + new_color;  // Use trail value from OLD position
 
     textureStore(agentMapOut, new_pixel, agentMapNewV + vec4f(1.0));
     textureStore(trailMapOut, new_pixel, new_value);

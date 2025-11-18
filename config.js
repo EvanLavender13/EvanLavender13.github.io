@@ -7,10 +7,11 @@ export const SIM_WIDTH = 1920;
 export const SIM_HEIGHT = 1080;
 
 // Default simulation parameters
+// Note: angles are stored in radians internally but displayed as degrees in UI
 export const params = {
-    sensingDistance: 20,
-    sensingAngle: 0.52,
-    turningAngle: 0.52,
+    sensingDistance: 10.0,
+    sensingAngle: 0.7853981633974483,  // 45 degrees
+    turningAngle: 0.7853981633974483,   // 45 degrees
     depositAmount: 0.10,
     decayAmount: 0.10,
     stepSize: 1.0
