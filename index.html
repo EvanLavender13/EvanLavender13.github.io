@@ -210,13 +210,13 @@
 
         function showError(message) {
             document.querySelector('.overlay').style.display = 'none';
-            document.body.innerHTML += `
+            document.body.insertAdjacentHTML('beforeend', `
                 <div class="error">
                     <h2>WebGPU Not Available</h2>
                     <p>${message}</p>
                     <p style="margin-top: 1rem;">WebGPU requires a modern browser with GPU support enabled.</p>
                 </div>
-            `;
+            `);
         }
 
         initWebGPU().catch(err => {
