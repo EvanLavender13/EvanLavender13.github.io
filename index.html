@@ -98,8 +98,9 @@
 
             // Set canvas size
             function resizeCanvas() {
-                canvas.width = window.innerWidth * devicePixelRatio;
-                canvas.height = window.innerHeight * devicePixelRatio;
+                const cappedPixelRatio = Math.min(devicePixelRatio, 2);
+                canvas.width = window.innerWidth * cappedPixelRatio;
+                canvas.height = window.innerHeight * cappedPixelRatio;
             }
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
