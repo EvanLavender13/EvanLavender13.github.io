@@ -1,195 +1,229 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-  
-  <style>
-    /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}h1{font-size:2em;margin:0.67em 0}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-size:1em}a{background-color:transparent}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:bolder}code,kbd,samp{font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-0.25em}sup{top:-0.5em}img{border-style:none}button,input,optgroup,select,textarea{font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,[type="button"],[type="reset"],[type="submit"]{-webkit-appearance:button}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type="button"]:-moz-focusring,[type="reset"]:-moz-focusring,[type="submit"]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:0.35em 0.75em 0.625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{vertical-align:baseline}textarea{overflow:auto}[type="checkbox"],[type="radio"]{box-sizing:border-box;padding:0}[type="number"]::-webkit-inner-spin-button,[type="number"]::-webkit-outer-spin-button{height:auto}[type="search"]{-webkit-appearance:textfield;outline-offset:-2px}[type="search"]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details{display:block}summary{display:list-item}template{display:none}[hidden]{display:none}.highlight{background:#f8f8f8;padding:1px 1em;border-radius:3px;font-size:1em;font-size:0.9em;overflow:auto;margin:1em -1em}.highlight .c{color:#999988;font-style:italic}.highlight .err{color:#a61717;background-color:#e3d2d2}.highlight .k{font-weight:bold}.highlight .o{font-weight:bold}.highlight .cm{color:#999988;font-style:italic}.highlight .cp{color:#999999;font-weight:bold}.highlight .c1{color:#999988;font-style:italic}.highlight .cs{color:#999999;font-weight:bold;font-style:italic}.highlight .gd{color:#000000;background-color:#ffdddd}.highlight .gd .x{color:#000000;background-color:#ffaaaa}.highlight .ge{font-style:italic}.highlight .gr{color:#aa0000}.highlight .gh{color:#999999}.highlight .gi{color:#000000;background-color:#ddffdd}.highlight .gi .x{color:#000000;background-color:#aaffaa}.highlight .go{color:#888888}.highlight .gp{color:#555555}.highlight .gs{font-weight:bold}.highlight .gu{color:#aaaaaa}.highlight .gt{color:#aa0000}.highlight .kc{font-weight:bold}.highlight .kd{font-weight:bold}.highlight .kp{font-weight:bold}.highlight .kr{font-weight:bold}.highlight .kt{color:#445588;font-weight:bold}.highlight .m{color:#009999}.highlight .s{color:#d14}.highlight .na{color:#008080}.highlight .nb{color:#0086B3}.highlight .nc{color:#445588;font-weight:bold}.highlight .no{color:#008080}.highlight .ni{color:#800080}.highlight .ne{color:#990000;font-weight:bold}.highlight .nf{color:#990000;font-weight:bold}.highlight .nn{color:#555555}.highlight .nt{color:#000080}.highlight .nv{color:#008080}.highlight .ow{font-weight:bold}.highlight .w{color:#bbbbbb}.highlight .mf{color:#009999}.highlight .mh{color:#009999}.highlight .mi{color:#009999}.highlight .mo{color:#009999}.highlight .sb{color:#d14}.highlight .sc{color:#d14}.highlight .sd{color:#d14}.highlight .s2{color:#d14}.highlight .se{color:#d14}.highlight .sh{color:#d14}.highlight .si{color:#d14}.highlight .sx{color:#d14}.highlight .sr{color:#009926}.highlight .s1{color:#d14}.highlight .ss{color:#990073}.highlight .bp{color:#999999}.highlight .vc{color:#008080}.highlight .vg{color:#008080}.highlight .vi{color:#008080}.highlight .il{color:#009999}body{box-sizing:content-box;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol;margin:0 auto;line-height:1.7;padding:4vh 6vw;overflow-x:hidden;color:#333;font-size:1rem;max-width:63em}@media (min-width: 820px){body{font-size:1.2rem}}time{display:block;color:#4d4d4d;margin:0.5em 0 1em}footer{margin:2em 0;font-size:0.8em;color:#5c5c5c;padding-top:1em}img{max-width:100%;display:block;margin:0 auto;max-height:75vh;border-radius:4px}blockquote{padding:1.5em;margin:0;font-size:0.88em;background:#f6f6f6;border-radius:4px}blockquote p{margin:0}hr{width:100%;border:0;height:1px;margin:1.5em 0;background:#d9d9d9}h1,h2,h3,h4,h5,h6{line-height:1.3;margin-bottom:0;padding-bottom:0}a{text-decoration:none;border-bottom:1px solid #d9d9d9;color:#1a1a1a}a:hover{color:black !important;background:#fffaf1}a:after{position:relative;top:-0.5em;font-size:0.7em;content:"↗";color:#aaaaaa}a.internal-link:after{content:""}*:focus{background:#ffe8bc !important;color:black !important}nav{margin:1em 0 3em}#notes-entry-container{display:grid;grid-gap:2em;grid-template-areas:"content" "side"}@media (min-width: 700px){#notes-entry-container{grid-template-columns:3fr 1fr;grid-template-areas:"content side"}}.backlink-box{background:#f6f6f6;padding:1em;border-radius:4px}code{background:#f5f5f5;padding:0.1em 0.2em;border-radius:4px}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGPU Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  </style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+        }
 
-  <meta charset="UTF-8">
+        #canvas {
+            display: block;
+            width: 100vw;
+            height: 100vh;
+        }
 
-  <link rel="canonical" href="http://localhost:4000/" />
+        .overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            pointer-events: none;
+            z-index: 10;
+        }
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        h1 {
+            font-size: clamp(2rem, 8vw, 6rem);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+        }
 
-  <meta name="description" content="My digital garden">
+        p {
+            font-size: clamp(0.875rem, 2vw, 1.125rem);
+            opacity: 0.7;
+            font-weight: 300;
+        }
 
-  <meta property="og:site_name" content="My digital garden">
+        .error {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            max-width: 600px;
+            padding: 2rem;
+        }
 
-  <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgo=">
+        .error h2 {
+            margin-bottom: 1rem;
+            color: #ff6b6b;
+        }
 
-  
-  <meta property="og:description" content="My digital garden"/>
-  
-
-  
-  <meta property="og:title" content="Home">
-  <meta property="og:type" content="article">
-  
-
-  
-
-  <meta property="og:url" content="http://localhost:4000/" />
-
-  
-
-  <title>
-    
-      My digital garden
-    
-  </title>
+        .error p {
+            opacity: 1;
+            line-height: 1.6;
+        }
+    </style>
 </head>
-
-  <body>
-    <nav><div>
-    <a class="internal-link" href="/"><b>My digital garden</b></a>
-</div>
-</nav>
-    <div class="wrapper">
-      <main><content>
-  <h1 id="welcome-">Welcome! 🌱</h1>
-
-<p style="padding: 3em 1em; background: #f5f7ff; border-radius: 4px;">
-  Take a look at <span style="font-weight: bold"><a class="internal-link" href="/your-first-note">Your first seed</a></span> to get started on your exploration.
-</p>
-
-<p>This digital garden template is free, open-source, and <a href="https://github.com/maximevaillancourt/digital-garden-jekyll-template">available on GitHub here</a>.</p>
-
-<p>The easiest way to get started is to read this <a href="https://maximevaillancourt.com/blog/setting-up-your-own-digital-garden-with-jekyll">step-by-step guide explaining how to set this up from scratch</a>. If you need any help, my <a href="https://twitter.com/vaillancourtmax">DMs are open on Twitter (@vaillancourtmax)</a>. Say hi! 👋</p>
-
-<style>
-  .wrapper {
-    max-width: 46em;
-  }
-</style>
-
-
-</content>
-</main>
-      <footer>This is the footer. Include anything you'd like here, like a link to an <a class="internal-link" href="/about">About</a> page.
-</footer>
+<body>
+    <canvas id="canvas"></canvas>
+    <div class="overlay">
+        <h1>WebGPU</h1>
+        <p>Animated gradient powered by WebGPU</p>
     </div>
 
-    <!-- That file is not particularly elegant. This will need a refactor at some point. -->
-<style>
-  content a.internal-link {
-    border-color: #8b88e6;
-  }
+    <script>
+        async function initWebGPU() {
+            const canvas = document.getElementById('canvas');
 
-  #tooltip-wrapper {
-    background: white;
-    padding: 1em;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    overflow: hidden;
-    position: absolute;
-    width: 400px;
-    height: 250px;
-    font-size: 0.8em;
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    opacity: 0;
-    transition: opacity 100ms;
-  }
+            // Check for WebGPU support
+            if (!navigator.gpu) {
+                showError('WebGPU is not supported in your browser. Try Chrome 113+, Edge 113+, or Safari 18+.');
+                return;
+            }
 
-  #tooltip-wrapper:after {
-		content: "";
-		position: absolute;
-		z-index: 1;
-		bottom: 0;
-		left: 0;
-		pointer-events: none;
-		background-image: linear-gradient(to bottom, rgba(255,255,255, 0), rgba(255,255,255, 1) 90%);
-		width: 100%;
-		height: 75px;
-  }
-</style>
+            const adapter = await navigator.gpu.requestAdapter();
+            if (!adapter) {
+                showError('Failed to get GPU adapter.');
+                return;
+            }
 
-<div style="opacity: 0; display: none;" id='tooltip-wrapper'>
-  <div id='tooltip-content'>
-  </div>
-</div>
+            const device = await adapter.requestDevice();
+            const context = canvas.getContext('webgpu');
+            const format = navigator.gpu.getPreferredCanvasFormat();
 
-<iframe style="display: none; height: 0; width: 0;" id='link-preview-iframe' src="">
-</iframe>
+            // Set canvas size
+            function resizeCanvas() {
+                canvas.width = window.innerWidth * devicePixelRatio;
+                canvas.height = window.innerHeight * devicePixelRatio;
+            }
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
 
-<script>
-  var opacityTimeout;
-  var contentTimeout;
-  var transitionDurationMs = 100;
+            context.configure({
+                device,
+                format,
+                alphaMode: 'opaque',
+            });
 
-  var iframe = document.getElementById('link-preview-iframe')
-  var tooltipWrapper = document.getElementById('tooltip-wrapper')
-  var tooltipContent = document.getElementById('tooltip-content')
+            // Shader code
+            const shaderCode = `
+                struct Uniforms {
+                    time: f32,
+                    width: f32,
+                    height: f32,
+                }
+                @group(0) @binding(0) var<uniform> uniforms: Uniforms;
 
-  function hideTooltip() {
-    opacityTimeout = setTimeout(function() {
-      tooltipWrapper.style.opacity = 0;
-      contentTimeout = setTimeout(function() {
-        tooltipContent.innerHTML = '';
-        tooltipWrapper.style.display = 'none';
-      }, transitionDurationMs + 1);
-    }, transitionDurationMs)
-  }
+                @vertex
+                fn vertexMain(@builtin(vertex_index) vertexIndex: u32) -> @builtin(position) vec4f {
+                    var pos = array<vec2f, 6>(
+                        vec2f(-1.0, -1.0),
+                        vec2f(1.0, -1.0),
+                        vec2f(-1.0, 1.0),
+                        vec2f(-1.0, 1.0),
+                        vec2f(1.0, -1.0),
+                        vec2f(1.0, 1.0)
+                    );
+                    return vec4f(pos[vertexIndex], 0.0, 1.0);
+                }
 
-  function showTooltip(event) {
-    var elem = event.target;
-    var elem_props = elem.getClientRects()[elem.getClientRects().length - 1];
-    var top = window.pageYOffset || document.documentElement.scrollTop
+                @fragment
+                fn fragmentMain(@builtin(position) pos: vec4f) -> @location(0) vec4f {
+                    let uv = pos.xy / vec2f(uniforms.width, uniforms.height);
+                    let t = uniforms.time * 0.0005;
 
-    if (event.target.host === window.location.host) {
-      iframe.src = event.target.href
-      iframe.onload = function() {
-        tooltipContentHtml = ''
-        tooltipContentHtml += '<div style="font-weight: bold;">' + iframe.contentWindow.document.querySelector('h1').innerHTML + '</div>'
-        tooltipContentHtml += iframe.contentWindow.document.querySelector('content').innerHTML
+                    // Create flowing gradient
+                    let x = uv.x + sin(uv.y * 3.0 + t * 2.0) * 0.1;
+                    let y = uv.y + cos(uv.x * 3.0 + t * 1.5) * 0.1;
 
-        tooltipContent.innerHTML = tooltipContentHtml
+                    let r = sin(x * 2.0 + t) * 0.5 + 0.5;
+                    let g = sin(y * 2.0 + t + 2.0) * 0.5 + 0.5;
+                    let b = sin((x + y) * 1.5 + t + 4.0) * 0.5 + 0.5;
 
-        tooltipWrapper.style.display = 'block';
-        setTimeout(function() {
-          tooltipWrapper.style.opacity = 1;
-        }, 1)
-      }
+                    return vec4f(r * 0.6, g * 0.4, b * 0.8, 1.0);
+                }
+            `;
 
-      tooltipWrapper.style.left = elem_props.left - (tooltipWrapper.offsetWidth / 2) + (elem_props.width / 2) + "px";
-      if ((window.innerHeight - elem_props.top) < (tooltipWrapper.offsetHeight)) {
-          tooltipWrapper.style.top = elem_props.top + top - tooltipWrapper.offsetHeight - 10 + "px";
-      } else if ((window.innerHeight - elem_props.top) > (tooltipWrapper.offsetHeight)) {
-          tooltipWrapper.style.top = elem_props.top + top + 35 + "px";
-      }
+            const shaderModule = device.createShaderModule({ code: shaderCode });
 
-      if ((elem_props.left + (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
-          tooltipWrapper.style.left = "10px";
-      } else if ((document.body.clientWidth - elem_props.left - (elem_props.width / 2)) < (tooltipWrapper.offsetWidth / 2)) {
-          tooltipWrapper.style.left = document.body.clientWidth - tooltipWrapper.offsetWidth - 20 + "px";
-      }
-    }
-  }
+            const pipeline = device.createRenderPipeline({
+                layout: 'auto',
+                vertex: {
+                    module: shaderModule,
+                    entryPoint: 'vertexMain',
+                },
+                fragment: {
+                    module: shaderModule,
+                    entryPoint: 'fragmentMain',
+                    targets: [{ format }],
+                },
+            });
 
-  function setupListeners(linkElement) {
-    linkElement.addEventListener('mouseleave', function(_event) {
-      hideTooltip();
-    });
+            // Create uniform buffer
+            const uniformBuffer = device.createBuffer({
+                size: 12, // 3 f32s
+                usage: GPUBufferUsage.UNIFORM | GPUBufferUsage.COPY_DST,
+            });
 
-    tooltipWrapper.addEventListener('mouseleave', function(_event) {
-      hideTooltip();
-    });
+            const bindGroup = device.createBindGroup({
+                layout: pipeline.getBindGroupLayout(0),
+                entries: [{
+                    binding: 0,
+                    resource: { buffer: uniformBuffer },
+                }],
+            });
 
-    linkElement.addEventListener('mouseenter', function(event) {
-      clearTimeout(opacityTimeout);
-      clearTimeout(contentTimeout);
-      showTooltip(event);
-    });
+            // Animation loop
+            let startTime = Date.now();
+            function render() {
+                const time = Date.now() - startTime;
+                const uniformData = new Float32Array([time, canvas.width, canvas.height]);
+                device.queue.writeBuffer(uniformBuffer, 0, uniformData);
 
-    tooltipWrapper.addEventListener('mouseenter', function(event) {
-      clearTimeout(opacityTimeout);
-      clearTimeout(contentTimeout);
-    });
-  }
+                const commandEncoder = device.createCommandEncoder();
+                const textureView = context.getCurrentTexture().createView();
 
-  document.querySelectorAll('content a').forEach(setupListeners);
-</script>
+                const renderPass = commandEncoder.beginRenderPass({
+                    colorAttachments: [{
+                        view: textureView,
+                        clearValue: { r: 0, g: 0, b: 0, a: 1 },
+                        loadOp: 'clear',
+                        storeOp: 'store',
+                    }],
+                });
 
-  </body>
+                renderPass.setPipeline(pipeline);
+                renderPass.setBindGroup(0, bindGroup);
+                renderPass.draw(6);
+                renderPass.end();
+
+                device.queue.submit([commandEncoder.finish()]);
+                requestAnimationFrame(render);
+            }
+
+            render();
+        }
+
+        function showError(message) {
+            document.querySelector('.overlay').style.display = 'none';
+            document.body.innerHTML += `
+                <div class="error">
+                    <h2>WebGPU Not Available</h2>
+                    <p>${message}</p>
+                    <p style="margin-top: 1rem;">WebGPU requires a modern browser with GPU support enabled.</p>
+                </div>
+            `;
+        }
+
+        initWebGPU().catch(err => {
+            console.error(err);
+            showError('An error occurred while initializing WebGPU: ' + err.message);
+        });
+    </script>
+</body>
 </html>
