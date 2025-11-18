@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: #000;
+    color: #fff;
+    overflow: hidden;
+}
+
+#canvas {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+}
+
+.controls {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    max-width: 300px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    z-index: 10;
+}
+
+.controls h2 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    font-size: 0.85rem;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.control-group input[type="range"] {
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background: rgba(255, 255, 255, 0.2);
+    outline: none;
+}
+
+.control-group input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+}
+
+.control-group input[type="range"]::-moz-range-thumb {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+    border: none;
+}
+
+.control-group .value {
+    font-size: 0.75rem;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85rem;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.error {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    max-width: 600px;
+    padding: 2rem;
+}
+
+.error h2 {
+    margin-bottom: 1rem;
+    color: #ff6b6b;
+}
+
+.info {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 0.85rem;
+    opacity: 0.5;
+}
