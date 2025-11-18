@@ -292,10 +292,10 @@
                     b: f32,
                 }
 
-                @group(0) @binding(0) var agentMap: texture_storage_2d<rgba32float, read>;
-                @group(0) @binding(1) var agentMapOut: texture_storage_2d<rgba32float, write>;
-                @group(0) @binding(2) var trailMap: texture_storage_2d<rgba32float, read>;
-                @group(0) @binding(3) var trailMapOut: texture_storage_2d<rgba32float, write>;
+                @group(0) @binding(0) var agentMap: texture_storage_2d<rgba8unorm, read>;
+                @group(0) @binding(1) var agentMapOut: texture_storage_2d<rgba8unorm, write>;
+                @group(0) @binding(2) var trailMap: texture_storage_2d<rgba8unorm, read>;
+                @group(0) @binding(3) var trailMapOut: texture_storage_2d<rgba8unorm, write>;
                 @group(0) @binding(4) var<storage, read> params: Parameters;
                 @group(0) @binding(5) var<storage, read_write> agents: array<Agent>;
 
@@ -524,7 +524,7 @@
             // Create textures
             const createTexture = () => device.createTexture({
                 size: [simWidth, simHeight],
-                format: 'rgba32float',
+                format: 'rgba8unorm',
                 usage: GPUTextureUsage.STORAGE_BINDING | GPUTextureUsage.TEXTURE_BINDING | GPUTextureUsage.COPY_DST,
             });
 
