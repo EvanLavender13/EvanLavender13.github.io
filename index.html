@@ -398,12 +398,12 @@
                     let new_pixel = vec2i(i32(new_position.x), i32(new_position.y));
 
                     let agentMapNewV = textureLoad(agentMap, new_pixel);
-                    let trailMapV = textureLoad(trailMap, pixel);
+                    let trailMapNewV = textureLoad(trailMap, new_pixel);
 
                     let depositAmount = params.depositAmount;
                     let full_color = vec4f(color.rgb, 1.0);
                     let new_color = full_color * depositAmount;
-                    let new_value = trailMapV + new_color;
+                    let new_value = trailMapNewV + new_color;
 
                     textureStore(agentMapOut, new_pixel, agentMapNewV + vec4f(1.0));
                     textureStore(trailMapOut, new_pixel, new_value);
@@ -622,6 +622,9 @@
                 // Swap agent maps
                 [agentMap, agentMapOut] = [agentMapOut, agentMap];
 
+                // Swap trail maps (so Stage 1 can read the deposits from Stage 0)
+                [trailMap, trailMapOut] = [trailMapOut, trailMap];
+
                 // Stage 1: Diffusion
                 const bindGroup1 = device.createBindGroup({
                     layout: computePipeline1.getBindGroupLayout(0),
@@ -639,7 +642,7 @@
                 computePass1.dispatchWorkgroups(Math.ceil((simWidth * simHeight) / WORKGROUP_SIZE));
                 computePass1.end();
 
-                // Swap trail maps
+                // Swap trail maps (so Display can read the blurred result from Stage 1)
                 [trailMap, trailMapOut] = [trailMapOut, trailMap];
 
                 // Display pass
