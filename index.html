@@ -97,20 +97,18 @@
             const format = navigator.gpu.getPreferredCanvasFormat();
 
             // Set canvas size
+            // Set canvas size and reconfigure WebGPU context
             function resizeCanvas() {
-                const cappedPixelRatio = Math.min(devicePixelRatio, 2);
-                canvas.width = window.innerWidth * cappedPixelRatio;
-                canvas.height = window.innerHeight * cappedPixelRatio;
+                canvas.width = window.innerWidth * devicePixelRatio;
+                canvas.height = window.innerHeight * devicePixelRatio;
+                context.configure({
+                    device,
+                    format,
+                    alphaMode: 'opaque',
+                });
             }
             resizeCanvas();
             window.addEventListener('resize', resizeCanvas);
-
-            context.configure({
-                device,
-                format,
-                alphaMode: 'opaque',
-            });
-
             // Shader code
             const shaderCode = `
                 struct Uniforms {
